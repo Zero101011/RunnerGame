@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "com.unity.probuilder": "3.10.1",
+    "com.unity.cinemachine": "2.2.10-preview.4"
+  }
+}
