@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody playerRB;
     public Vector3 moveDir;
     public Vector3 deathPos;
-    public TextAsset myDeathPoss;
+    public TextAsset myDeathPoss;                                                                           /**/
     public BoxCollider bottom;
     Material m_Material;
     GameController controller;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 this.gameObject.tag = "blue";
                 m_Material.color = Color.blue;
                 lives--;
-                WriteDeathPos();
+                WriteDeathPos();                                                                           /**/
                 print("deded" + lives);
             }
         }
@@ -101,8 +101,8 @@ public class PlayerController : MonoBehaviour
             this.gameObject.tag = "blue";
             m_Material.color = Color.blue;
             lives--;
-            GetDeathPos();
-            WriteDeathPos();
+            GetDeathPos();                                                                           /**/
+            WriteDeathPos();                                                                           /**/
             print("you died at " + deathPos);
 
             print("deded" + lives);
@@ -112,8 +112,8 @@ public class PlayerController : MonoBehaviour
             print("deded");
             lives = 3;
             OnGameOver();
-            GetDeathPos();
-            WriteDeathPos();
+            GetDeathPos();                                                                           /**/
+            WriteDeathPos();                                                                           /**/
             SceneManager.LoadScene(0);
         }
     }
@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void GetDeathPos()
+    public void GetDeathPos()                                                                           /**/
     {
         deathPos = this.gameObject.transform.position;
     }
@@ -174,25 +174,25 @@ public class PlayerController : MonoBehaviour
         print("gameOverCalled");
     }
 
-    public void WriteDeathPos()
+    public void WriteDeathPos()                                                                           /**/
     {
-        //dataRecorder.appendToEnd(deathPos);
+        //dataRecorder.appendToEnd(deathPos);                                                                           /**/
 
-        ////DataRecorder mydata = new DataRecorder;
-        ////mydata.appendToEnd()
-        string path = "Assets/Resources/DeathPositions.txt";
+        ////DataRecorder mydata = new DataRecorder;                                                                           /**/
+        ////mydata.appendToEnd()                                                                           /**/
+        string path = "Assets/Resources/DeathPositions.txt";                                                                           /**/
 
         //Write death position vector to text file
 
-        StreamWriter writer = new StreamWriter(path, true);
-        writer.WriteLine(deathPos.x + "," + deathPos.y + "," + deathPos.z);
-        //writer.WriteLine(deathPos + ";");your version
-        //writer.WriteLine(deathPos);
-        writer.Close();
+        StreamWriter writer = new StreamWriter(path, true);                                                                           /**/
+        writer.WriteLine(deathPos.x + "," + deathPos.y + "," + deathPos.z);                                                                           /**/
+        //writer.WriteLine(deathPos + ";");your version                                                                           /**/
+        //writer.WriteLine(deathPos);                                                                           /**/
+        writer.Close();                                                                           /**/
 
         ////Re-import the file to update the reference in the editor
-        AssetDatabase.ImportAsset("Assets/Resources/DeathPositions");
-        TextAsset asset = Resources.Load<TextAsset>("Assets/Resources/DeathPositions.txt");
+        AssetDatabase.ImportAsset("Assets/Resources/DeathPositions");                                                                           /**/
+        TextAsset asset = Resources.Load<TextAsset>("Assets/Resources/DeathPositions.txt");                                                                           /**/
 
         ////Print the text from the file
         print(myDeathPoss.text);

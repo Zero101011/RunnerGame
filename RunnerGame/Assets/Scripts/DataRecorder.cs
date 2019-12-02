@@ -36,7 +36,7 @@ public class DataRecorder : MonoBehaviour {
      * If you don't specify a seperator for this function, it will automatically uses ;
      * if the user doesn'tspecity whether to add timestamp. by default this funciton will add it as the last column for each line or before the seperator.
      */
-    public bool appendToEnd(string _whatever, string _seperator = ";", bool _addTimeStape = true)
+    public bool appendToEnd(string _whatever, string _seperator = ";", bool _addTimeStape = true)                                                                            /**/
     {
         string path = "Assets/Resources/DeathPositions.txt";
 
@@ -55,7 +55,7 @@ public class DataRecorder : MonoBehaviour {
         print(playerController.myDeathPoss.text);
         return true;
     }
-    public bool appendToEnd(Vector3 _pos, string _seperator = ";", bool _addTimeStape = true)
+    public bool appendToEnd(Vector3 _pos, string _seperator = ";", bool _addTimeStape = true)                                                                            /**/
     {
         string path = "Assets/Resources/DeathPositions.txt";
 
@@ -94,7 +94,7 @@ public class DataRecorder : MonoBehaviour {
         return true;
     }
 
-    public bool createNewFile(string _name)
+    public bool createNewFile(string _name)                                                                            /**/
     {
         return true;
     }
