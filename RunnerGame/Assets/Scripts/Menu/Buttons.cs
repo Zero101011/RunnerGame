@@ -66,6 +66,5 @@ public class Buttons : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        print("So Lonely");
     }
 }

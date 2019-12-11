@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public BoxCollider bottom;
     Material m_Material;
     GameController controller;
-    //DataRecorder dataRecorder;
+    DataRecorder dataRecorder;
 
     // Use this for initialization
     void Start()
@@ -176,26 +176,26 @@ public class PlayerController : MonoBehaviour
 
     public void WriteDeathPos()
     {
-        //dataRecorder.appendToEnd(deathPos);
+        dataRecorder.appendToEnd(deathPos);
 
-        ////DataRecorder mydata = new DataRecorder;
-        ////mydata.appendToEnd()
-        //string path = "Assets/Resources/DeathPositions.txt";
+        //DataRecorder mydata = new DataRecorder;
+        //mydata.appendToEnd()
+        string path = "Assets/Resources/DeathPositions.txt";
 
         //Write death position vector to text file
 
-        //StreamWriter writer = new StreamWriter(path, true);
-        //writer.WriteLine(deathPos.x + "," + deathPos.y + "," + deathPos.z);
-        ////writer.WriteLine(deathPos + ";");your version
-        ////writer.WriteLine(deathPos);
-        //writer.Close();
+        StreamWriter writer = new StreamWriter(path, true);
+        writer.WriteLine(deathPos.x + "," + deathPos.y + "," + deathPos.z);
+        //writer.WriteLine(deathPos + ";");your version
+        //writer.WriteLine(deathPos);
+        writer.Close();
 
-        ////Re-import the file to update the reference in the editor
-        //AssetDatabase.ImportAsset("Assets/Resources/DeathPositions");
-        //TextAsset asset = Resources.Load<TextAsset>("Assets/Resources/DeathPositions.txt");
+        //Re-import the file to update the reference in the editor
+        AssetDatabase.ImportAsset("Assets/Resources/DeathPositions");
+        TextAsset asset = Resources.Load<TextAsset>("Assets/Resources/DeathPositions.txt");
 
-        ////Print the text from the file
-        //print(myDeathPoss.text);
+        //Print the text from the file
+        print(myDeathPoss.text);
     }
 
 }
